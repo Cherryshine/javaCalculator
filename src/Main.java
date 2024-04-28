@@ -7,12 +7,43 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int num1;
         int num2;
-
+        char op;
+        int result =0;
         System.out.print("첫 번째 숫자를 입력하세요: ");
         num1 = sc.nextInt();
 
         System.out.print("두 번째 숫자를 입력하세요: ");
         num2 = sc.nextInt();
+
+        System.out.print("연산부호를 입력하세요: ");
+        char operator = sc.next().charAt(0);
+
+        switch (operator) {
+            case '+':
+                result = num1 + num2;
+                System.out.println(result);
+                break;
+            case '-':
+                result = num1 - num2;
+                System.out.println(result);
+                break;
+            case '*':
+                result = num1 * num2;
+                System.out.println(result);
+                break;
+            case '/':
+                if (num2 != 0)
+                    result = num1 / num2;
+                else
+                    System.out.println("0으로 나눌 수 없습니다.");
+                System.out.println(result);
+                break;
+            default:
+                System.out.println("올바른 연산 부호를 입력하세요. (+, -, *, /)");
+                return;
+
+        }
+
 
 
 
